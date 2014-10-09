@@ -1,0 +1,1 @@
+$(function(){function l(l){console.log("makeEyeball();"),l.parallax({})}l($("#eyeball"))});
