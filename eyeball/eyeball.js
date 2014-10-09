@@ -2,9 +2,6 @@
 
 $(function() {
 
-      // var eyeball = $('.eyeball'),
-          // pupil = eyeball.find('.pupil');
-
       function makeEyeball( thisEye ) {
 
           thisEye.parallax({
@@ -18,23 +15,20 @@ $(function() {
                   //// invertX:true
               frictionX:0.4, 
               frictionY:0.4
-          });              
+          });            
+
+          if (Modernizr.touch) {
+            thisEye.parallax('invert', false, false);
+          }  
+      
       }
-
-
-
       // makeEyeball( eyeball );
-
-      // TweenMax.to(pupil, 4, {scaleX:0.5, scaleY:0.5, delay:1});
-
 
 
 
       $('.eyeball').each(function() {
-        // console.log();
-        // console.log(this);
 
-        var eyeball = $(this);
+        var thisEye = $(this);
 
 //  NOT SURE HOW TO ADD MULIT-LINE HTML STRING ALL AT ONCE... (THIS DOES NOT WORK.)
         // var parts =  $("
@@ -42,12 +36,12 @@ $(function() {
         //                 <div class='layer iris'  data-depth='-2'></div>\
         //                 <div class='layer pupil' data-depth='-2.1'></div>\
         //               ");
-        // $(this).append(parts);
+        // thisEye.append(parts);
         
 
 //..IT COULD BE ADDED ALL ON ONE LINE, BUT DIFFICULT TO MANAGE..
         var parts =  $("<div class='layer ball'  data-depth='-.5'></div><div class='layer iris'  data-depth='-2'></div><div class='layer pupil' data-depth='-2.1'></div>");
-        eyeball.append(parts);
+        thisEye.append(parts);
 
 
 //..OR BREAK IT UP INTO INDIVIDUAL LINES/DIVS FOR LEGIBILITY.
@@ -55,26 +49,26 @@ $(function() {
         // var iris = $('<div class="layer iris"       data-depth="-2"></div>');
         // var pupil = $('<div class="layer pupil"       data-depth="-2.1"></div>');
              
-        // $(this).append(ball);
-        // $(this).append(iris);
-        // $(this).append(pupil);
+        // thisEye.append(ball);
+        // thisEye.append(iris);
+        // thisEye.append(pupil);
 
 
 
-        var size = eyeball.data('size');
+        var size = thisEye.data('size');
 
         console.log(size);
 
         if(size !== undefined) {          
-          eyeball.css({
+          thisEye.css({
             'width': size + 'px',
             'height': size + 'px'
           });
         }
 
 
+        makeEyeball(thisEye);
 
-        makeEyeball(eyeball);
       });
       
 
