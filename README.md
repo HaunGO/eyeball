@@ -1,10 +1,8 @@
-eyeball
+eyeball.js
 =======
 
-Eyeball to see with.
 
-
-Working on a plugin to add an all seeing eyeball. :)  
+Add an eyeball to your site.  :)  
 
 Will depend on jquery and parallax.js.
 
