@@ -1,42 +1,55 @@
-/* line 7, ../scss/eyeball.scss */
-#eyeball {
-  width: 350px;
-  height: 350px;
+/* line 13, ../scss/eyeball.scss */
+.eyeball {
+  width: 500px;
+  height: 500px;
   margin: auto;
+  border: 1px solid green;
   position: absolute;
+  margin: auto;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: -50;
 }
-
-/* line 35, ../scss/eyeball.scss */
-#eyeball .pupil {
+/* line 24, ../scss/eyeball.scss */
+.eyeball .pupil {
   background-color: #333;
   width: 30%;
   height: 30%;
   border-radius: 50%;
-  z-index: 102;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
-
-/* line 50, ../scss/eyeball.scss */
-#eyeball .iris {
+/* line 38, ../scss/eyeball.scss */
+.eyeball .iris {
   background-color: #00bff3;
   width: 40%;
   height: 40%;
   border-radius: 50%;
-  z-index: 101;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
-
-/* line 65, ../scss/eyeball.scss */
-#eyeball .ball {
+/* line 52, ../scss/eyeball.scss */
+.eyeball .ball {
   background-color: #f5f0d8;
   width: 100%;
   height: 100%;
   border-radius: 50%;
   border: 2px solid #c7594e;
-  z-index: 100;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 /*# sourceMappingURL=eyeball.css.map */

@@ -2,39 +2,72 @@
 
 
 
+$(function() {
+
+  // var scene = document.getElementsByClassName('eyeball');
+  // var parallax = new Parallax(scene);
+
+  var eyeball = $('.eyeball');
+  eyeball.parallax();
+
+});
+
+
+
+
+
+
+
+
+
+
 
 $(function() {
 
-  var eyeball = $('#eyeball'),
-  pupil = $('#eyeball .pupil');
+  // var eyeball = $('.eyeball');
+//   // , pupil = $('#eyeball .pupil');
 
-  function makeEyeball( thisEye ) {
-    console.log('makeEyeball();');
+  // function makeEyeball( thisEye ) {
+//     console.log('makeEyeball();');
 
-    thisEye.parallax({
-     // relativeInput:true,
-     // clipRelativeInput:true,
-     //  // calibrateY:false,
-     //  limitY:40,
-     //  limitX:40,
-     //  // invertY:true, 
-     //  // invertX:true
-     //  frictionX:0.1, 
-     //  frictionY:0.1
-    });
+//     thisEye.parallax({
+//      // relativeInput:true,
+//      // clipRelativeInput:true,
+//      //  // calibrateY:false,
+//      //  limitY:40,
+//      //  limitX:40,
+//      //  // invertY:true, 
+//      //  // invertX:true
+//      //  frictionX:0.1, 
+//      //  frictionY:0.1
+//     });
 
-    // console.log('???' + thisEye)
+//     // console.log('???' + thisEye)
       
-  }
+//   }
 
-  makeEyeball( eyeball );
-  // TweenMax.to(pupil, 0, {scaleX:0.5, scaleY:0.5});
-
-
-
-
+//   makeEyeball( eyeball );
+//   // TweenMax.to(eyeball, 4, {scaleX:0.5, scaleY:0.5});
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -24,7 +24,8 @@
 
 
         <!-- Modernizr -->
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script> -->
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 
 </style>
 
@@ -34,27 +35,23 @@
 
       <h1>eyeball.js</h1>
 
-      <div id="eyeball">
-        <div class="layer pupil"      data-depth="-2.1"></div>
-        <div class="layer iris"       data-depth="-2"></div>
+      <div class="eyeball">
         <div class="layer ball"       data-depth="-.5"></div>
+        <div class="layer iris"       data-depth="-2"></div>
+        <div class="layer pupil"      data-depth="-2.1"></div>
       </div>
 
 
- <!-- 
-      <div class="eyeball">
-        <div class="layer pupil"></div>
-        <div class="layer iris"></div>
-        <div class="layer ball"></div>
-      </div> 
- -->
-
-
-
       <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-      <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script> -->
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+
+
+      <!-- WHEN USING THE CDN OF THE PARALLAX.JS LIBRARY, THE CSS WAS SOMEHOW GETTING PARTIALLY NEGATED.. EACH ELEMENT WAS 100% SIZE. -->
       <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/parallax/1.1.1/parallax.min.js"></script> -->
-      <script src="http://cdnjs.cloudflare.com/ajax/libs/parallax/1.1.1/jquery.parallax.min.js"></script>
+      <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/parallax/1.1.1/jquery.parallax.min.js"></script> -->
+      <script src="js/vendor/parallax.min.js"></script>
+      <script src="js/vendor/jquery.parallax.min.js"></script>
+
 
       <script src="eyeball/eyeball.js"></script>
 

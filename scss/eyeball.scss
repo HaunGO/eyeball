@@ -3,66 +3,53 @@
 
 
 
-
-  #eyeball {
-    width:350px; height:350px;
-    margin: auto;
-
+@mixin center {
     position: absolute;
+    margin: auto;
     top: 0; left: 0; bottom: 0; right: 0;
-  
-    z-index: -50;
-  }
+}
 
 
+.eyeball {
+  width:500px; height:500px;
+  margin: auto;
 
-  // .eyeball.orb{
-  //   background-color: white;
-  //   width: 10% ;
-  //   height: 10%  ;
-  //   border-radius:50%;
-    
-  //   position: absolute;
-  //   margin: auto;
-  //   top: 0; left: 0; bottom: 0; right: 0;
+  border:1px solid green;
 
-  //   z-index:102;
-  //   visibility:hidden;
-  // }
+  @include center;
+
+  // z-index: -50;
 
 
-  
-  #eyeball .pupil{
+ .pupil{
     background-color: #333;
-    width: 30% ;
-    height: 30%  ;
+    width: 30%;
+    height: 30%;
     border-radius:50%;
       
-    // position: absolute;
-    // margin: auto;
-    // top: 0; left: 0; bottom: 0; right: 0;
+    @include center;
 
-    z-index:102;
+    // z-index:102;
+    
   }
   
 
  
-  #eyeball .iris{
+  .iris{
     background-color: #00bff3;
-    width: 40% ;
-    height: 40%  ;
+    width: 40%;
+    height: 40%;
     border-radius:50%;
           
-    // position: absolute;
-    // margin: auto;
-    // top: 0; left: 0; bottom: 0; right: 0;
+    @include center;
 
-    z-index:101;
+    // z-index:101;
+    
   }
   
 
 
-  #eyeball .ball{ 
+  .ball{ 
     background-color: #f5f0d8;
     width: 100%  ;
     height: 100% ;
@@ -70,13 +57,14 @@
 
     border:2px solid #c7594e;
    
-    // position: absolute;
-    // margin: auto;
-    // top: 0; left: 0; bottom: 0; right: 0;
+    @include center;
 
+    // z-index: 100;
 
-    z-index: 100;
   }
+
+}
+
 
 
 

@@ -1,1 +1,1 @@
-$(function(){function l(l){console.log("makeEyeball();"),l.parallax({})}var a=$("#eyeball"),e=$("#eyeball .pupil");l(a)});
+$(function(){var a=$(".eyeball");a.parallax()}),$(function(){});
