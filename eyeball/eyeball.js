@@ -28,7 +28,7 @@ $(function() {
   }
 
   makeEyeball( eyeball );
-  TweenMax.to(pupil, 0, {scaleX:0.5, scaleY:0.5});
+  // TweenMax.to(pupil, 0, {scaleX:0.5, scaleY:0.5});
 
 
 

@@ -1,1 +1,1 @@
-$(function(){function l(l){console.log("makeEyeball();"),l.parallax({})}var a=$("#eyeball"),e=$("#eyeball .pupil");l(a),TweenMax.to(e,0,{scaleX:.5,scaleY:.5})});
+$(function(){function l(l){console.log("makeEyeball();"),l.parallax({})}var a=$("#eyeball"),e=$("#eyeball .pupil");l(a)});
