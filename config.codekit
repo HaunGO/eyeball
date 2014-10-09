@@ -309,7 +309,7 @@
 	"javascriptCreateSourceMap": 1,
 	"javascriptOutputStyle": 1,
 	"javascriptSyntaxCheckerStyle": 1,
-	"jsCheckerReservedNamesString": "",
+	"jsCheckerReservedNamesString": "TweenMax",
 	"jsHintFlags2": {
 		"asi": {
 			"active": 0,

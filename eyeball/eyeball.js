@@ -3,10 +3,10 @@
 
 
 
-
 $(function() {
 
-  // var eyeball = $('#eyeball');
+  var eyeball = $('#eyeball'),
+  pupil = $('#eyeball .pupil');
 
   function makeEyeball( thisEye ) {
     console.log('makeEyeball();');
@@ -27,7 +27,12 @@ $(function() {
       
   }
 
-  makeEyeball( $('#eyeball') );
+  makeEyeball( eyeball );
+  TweenMax.to(pupil, 0, {scaleX:0.5, scaleY:0.5});
+
+
+
+
 
 });
 
