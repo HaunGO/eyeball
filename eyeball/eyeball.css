@@ -1,21 +1,15 @@
-/* line 13, ../scss/eyeball.scss */
+/* line 13, eyeball.scss */
 .eyeball {
-  width: 500px;
-  height: 500px;
-  margin: auto;
-  border: 1px solid green;
-  position: absolute;
-  margin: auto;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  width: 400px;
+  height: 400px;
+  margin: 3%;
+  display: inline-block;
 }
-/* line 24, ../scss/eyeball.scss */
+/* line 24, eyeball.scss */
 .eyeball .pupil {
   background-color: #333;
-  width: 30%;
-  height: 30%;
+  width: 29%;
+  height: 29%;
   border-radius: 50%;
   position: absolute;
   margin: auto;
@@ -24,7 +18,7 @@
   bottom: 0;
   right: 0;
 }
-/* line 38, ../scss/eyeball.scss */
+/* line 38, eyeball.scss */
 .eyeball .iris {
   background-color: #00bff3;
   width: 40%;
@@ -37,7 +31,7 @@
   bottom: 0;
   right: 0;
 }
-/* line 52, ../scss/eyeball.scss */
+/* line 52, eyeball.scss */
 .eyeball .ball {
   background-color: #f5f0d8;
   width: 100%;

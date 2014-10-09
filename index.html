@@ -14,7 +14,8 @@
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.css">
-        <!-- <link rel="stylesheet" href="css/main.css"> -->
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/page.css">
 
 
 
@@ -27,33 +28,54 @@
         <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script> -->
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 
-</style>
 
 
     </head>
     <body>
 
-      <h1>eyeball.js</h1>
-
-      <div class="eyeball">
+      <header>
+        <h1>eyeball.js</h1>
+        <!-- <p>Check.. Check.. Check it out!</p> -->
+      </header>
+<!--
+      <div class="eyeball">         
         <div class="layer ball"       data-depth="-.5"></div>
         <div class="layer iris"       data-depth="-2"></div>
         <div class="layer pupil"      data-depth="-2.1"></div>
       </div>
+ -->      
+
+      <section>
+        <!-- <div class="eyeball" data-size="50"></div> -->
+        <div class="eyeball" data-size="100"></div>
+        <div class="eyeball" data-size="250"></div>
+        <div class="eyeball"></div>
+        <div class="eyeball" data-size="150"></div>
+        <div class="eyeball" data-size="100"></div>
+      </section>
+
+
+
+
+      <footer>
+        <div class="eyeball" id="" data-size="130"></div>
+        <p>Thanks for playing!</p>
+        <p>Contribute to the project on <a href='https://github.com/HaunGO/eyeball' target="_blank">GitHub</a>.</p>
+      </footer>
 
 
       <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-      <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+      <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script> -->
 
 
       <!-- WHEN USING THE CDN OF THE PARALLAX.JS LIBRARY, THE CSS WAS SOMEHOW GETTING PARTIALLY NEGATED.. EACH ELEMENT WAS 100% SIZE. -->
       <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/parallax/1.1.1/parallax.min.js"></script> -->
       <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/parallax/1.1.1/jquery.parallax.min.js"></script> -->
-      <script src="js/vendor/parallax.min.js"></script>
+      <!-- <script src="js/vendor/parallax.min.js"></script> -->
       <script src="js/vendor/jquery.parallax.min.js"></script>
 
 
-      <script src="eyeball/eyeball.js"></script>
+      <script src="eyeball/min/eyeball-min.js"></script>
 
 
 

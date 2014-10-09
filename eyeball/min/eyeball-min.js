@@ -1,1 +1,1 @@
-$(function(){var a=$(".eyeball");a.parallax()}),$(function(){});
+$(function(){function i(i){i.parallax({relativeInput:!0,clipRelativeInput:!0,limitY:40,limitX:40,frictionX:.4,frictionY:.4})}$(".eyeball").each(function(){var a=$(this),t=$("<div class='layer ball'  data-depth='-.5'></div><div class='layer iris'  data-depth='-2'></div><div class='layer pupil' data-depth='-2.1'></div>");a.append(t);var l=a.data("size");console.log(l),void 0!==l&&a.css({width:l+"px",height:l+"px"}),i(a)})});

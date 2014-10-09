@@ -11,20 +11,20 @@
 
 
 .eyeball {
-  width:500px; height:500px;
-  margin: auto;
+  width:400px; height:400px;
+  margin: 3%;
+  display:inline-block;
+  // position:absolute;
 
-  border:1px solid green;
-
-  @include center;
+  // @include center;
 
   // z-index: -50;
 
 
  .pupil{
     background-color: #333;
-    width: 30%;
-    height: 30%;
+    width: 29%;
+    height: 29%;
     border-radius:50%;
       
     @include center;
