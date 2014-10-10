@@ -1,11 +1,11 @@
-/* line 13, eyeball.scss */
+/* line 22, eyeball.scss */
 .eyeball {
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   margin: 3%;
   display: inline-block;
 }
-/* line 24, eyeball.scss */
+/* line 33, eyeball.scss */
 .eyeball .pupil {
   background-color: #333;
   width: 29%;
@@ -18,7 +18,7 @@
   bottom: 0;
   right: 0;
 }
-/* line 38, eyeball.scss */
+/* line 47, eyeball.scss */
 .eyeball .iris {
   background-color: #00bff3;
   width: 40%;
@@ -31,7 +31,7 @@
   bottom: 0;
   right: 0;
 }
-/* line 52, eyeball.scss */
+/* line 61, eyeball.scss */
 .eyeball .ball {
   background-color: #f5f0d8;
   width: 100%;

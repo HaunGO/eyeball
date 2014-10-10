@@ -2,6 +2,15 @@
 
 
 
+$light-blue: #00bff3;
+
+
+
+$iris-color: $light-blue;
+
+
+
+
 
 @mixin center {
     position: absolute;
@@ -11,7 +20,7 @@
 
 
 .eyeball {
-  width:400px; height:400px;
+  width:300px; height:300px;
   margin: 3%;
   display:inline-block;
   // position:absolute;
@@ -36,7 +45,7 @@
 
  
   .iris{
-    background-color: #00bff3;
+    background-color: $iris-color;
     width: 40%;
     height: 40%;
     border-radius:50%;

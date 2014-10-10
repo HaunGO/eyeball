@@ -8,13 +8,12 @@ $(function() {
 
              relativeInput:true,
              clipRelativeInput:true,
-                  //// calibrateY:false,
-              limitY:40,
-              limitX:40,
+             limitY:40,
+             limitX:40,
                   //// invertY:true, 
                   //// invertX:true
-              frictionX:0.4, 
-              frictionY:0.4
+             frictionX:0.4, 
+             frictionY:0.4
           });            
 
           if (Modernizr.touch) {
@@ -29,6 +28,7 @@ $(function() {
       $('.eyeball').each(function() {
 
         var thisEye = $(this);
+
 
 //  NOT SURE HOW TO ADD MULIT-LINE HTML STRING ALL AT ONCE... (THIS DOES NOT WORK.)
         // var parts =  $("
@@ -54,15 +54,25 @@ $(function() {
         // thisEye.append(pupil);
 
 
+        var iris = thisEye.find('.iris'),
+            // pupil = thisEye.find('.pupil'),
+            // ball = thisEye.find('.ball'),
+            size = thisEye.data('size'),
+            color = thisEye.data('color');
 
-        var size = thisEye.data('size');
 
-        console.log(size);
+        //console.log(size);
 
         if(size !== undefined) {          
           thisEye.css({
             'width': size + 'px',
             'height': size + 'px'
+          });
+        }
+
+        if(color !== undefined) {          
+          iris.css({
+            'background-color': color,
           });
         }
 
