@@ -24,20 +24,15 @@ $outline-color: #c7594e;
 
 
 .eyeball {
-  width:300px; height:300px;
+  width:100px; height:100px;
   margin: 3px;
   display:inline-block;
-  // position:absolute;
-
-  // @include center;
-
-  // z-index: -50;
 
 
  .pupil{
     background-color: $pupil-color;
-    width: 29%;
-    height: 29%;
+    width: 30%;
+    height: 30%;
     border-radius:50%;
       
     @include center;

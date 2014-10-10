@@ -21,8 +21,6 @@ $(function() {
           }  
       
       }
-      // makeEyeball( eyeball );
-
 
 
       $('.eyeball').each(function() {
@@ -61,8 +59,9 @@ $(function() {
             color = thisEye.data('color');
 
 
-        //console.log(size);
 
+
+        // SET THE SIZE OF THE EYEBALL:
         if(size !== undefined) {          
           thisEye.css({
             'width': size + 'px',
@@ -70,11 +69,15 @@ $(function() {
           });
         }
 
+        // SET THE COLOR OF THE IRIS
         if(color !== undefined) {          
           iris.css({
             'background-color': color,
           });
         }
+
+
+
 
 
         makeEyeball(thisEye);
