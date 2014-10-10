@@ -52,7 +52,22 @@
         <!-- <div class="eyeball"></div> -->
         <div class="eyeball" data-size="150" data-color="#18c6b8"></div>
         <div class="eyeball" data-size="100" data-color="#a18bf4"></div>
+
+
+
+
+
+
+
+      <div class="eyeballfield">
+
+      </div>
+
+
       </section>
+
+
+
 
 
 
@@ -75,7 +90,35 @@
       <script src="js/vendor/jquery.parallax.min.js"></script>
 
 
+
+            
+      <script>
+        $(function () {
+
+
+
+
+            var i = 0;
+            while ( i < 9 ) {
+                // This block will be executed 100 times.
+                console.log( "Currently at " + i );
+                $('.eyeballfield').append("<div class='eyeball' data-size='75'></div>");
+                i++; // Increment i
+            }
+
+
+
+
+
+        })();
+      </script>
+
+
+
+
       <script src="eyeball/min/eyeball-min.js"></script>
+
+
 
 
     <script>
