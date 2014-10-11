@@ -1,93 +1,15 @@
+// the semi-colon before function invocation is a safety net against concatenated
+// scripts and/or other plugins which may not be closed properly.
+;(function ( $, window, document, undefined ) {
 
+    // undefined is used here as the undefined global variable in ECMAScript 3 is
+    // mutable (ie. it can be changed by someone else). undefined isn't really being
+    // passed in so we can ensure the value of it is truly undefined. In ES5, undefined
+    // can no longer be modified.
 
-$(function() {
-
-      function makeEyeball( thisEye ) {
-
-          thisEye.parallax({
-
-             relativeInput:true,
-             clipRelativeInput:true,
-             limitY:40,
-             limitX:40,
-                  //// invertY:true, 
-                  //// invertX:true
-             frictionX:0.4, 
-             frictionY:0.4
-          });            
-
-          if (Modernizr.touch) {
-            thisEye.parallax('invert', false, false);
-          }  
-      
-      }
-
-
-      $('.eyeball').each(function() {
-
-        var thisEye = $(this);
-
-
-//  NOT SURE HOW TO ADD MULIT-LINE HTML STRING ALL AT ONCE... (THIS DOES NOT WORK.)
-        // var parts =  $("
-        //                 <div class='layer ball'  data-depth='-.5'></div>\
-        //                 <div class='layer iris'  data-depth='-2'></div>\
-        //                 <div class='layer pupil' data-depth='-2.1'></div>\
-        //               ");
-        // thisEye.append(parts);
-        
-
-//..IT COULD BE ADDED ALL ON ONE LINE, BUT DIFFICULT TO MANAGE..
-        var parts =  $("<div class='layer ball'  data-depth='-.5'></div><div class='layer iris'  data-depth='-2'></div><div class='layer pupil' data-depth='-2.1'></div>");
-        thisEye.append(parts);
-
-
-//..OR BREAK IT UP INTO INDIVIDUAL LINES/DIVS FOR LEGIBILITY.
-        // var ball = $('<div class="layer ball"       data-depth="-.5"></div>');
-        // var iris = $('<div class="layer iris"       data-depth="-2"></div>');
-        // var pupil = $('<div class="layer pupil"       data-depth="-2.1"></div>');
-             
-        // thisEye.append(ball);
-        // thisEye.append(iris);
-        // thisEye.append(pupil);
-
-
-        var iris = thisEye.find('.iris'),
-            // pupil = thisEye.find('.pupil'),
-            // ball = thisEye.find('.ball'),
-            size = thisEye.data('size'),
-            color = thisEye.data('color');
-
-
-
-
-        // SET THE SIZE OF THE EYEBALL:
-        if(size !== undefined) {          
-          thisEye.css({
-            'width': size + 'px',
-            'height': size + 'px'
-          });
-        }
-
-        // SET THE COLOR OF THE IRIS
-        if(color !== undefined) {          
-          iris.css({
-            'background-color': color,
-          });
-        }
-
-
-
-
-
-        makeEyeball(thisEye);
-
-      });
-      
-
-
-
-});
+    // window and document are passed through as local variable rather than global
+    // as this (slightly) quickens the resolution process and can be more efficiently
+    // minified (especially when both are regularly referenced in your plugin).
 
 
 
@@ -98,6 +20,31 @@ $(function() {
 
 
 
+    // Create the defaults once
+    var pluginName = "EyeBall",
+        defaults = {
+          ballColor: "#f5f0d8",
+          irisColor: "#00bff3",
+          pupilColor: "#333",
+          size: '100'
+        },
+        EYEBALL;
+
+
+
+
+    // The actual plugin constructor
+    function Plugin ( element, options ) {
+        this.element = element;
+        // jQuery has an extend method which merges the contents of two or
+        // more objects, storing the result in the first object. The first object
+        // is generally empty as we don't want to alter the default options for
+        // future instances of the plugin
+        this.settings = $.extend( {}, defaults, options );
+        this._defaults = defaults;
+        this._name = pluginName;
+        this.init();
+    }
 
 
 
@@ -105,55 +52,137 @@ $(function() {
 
 
 
-// SCRAPS:
-// 
-// getPupilPositionsFromMousePosition: function (x, y) {
-//             // Normalise x and y to container page offset
-//             var offset = this.getOffset();
-//             x = x - offset.left;
-//             y = y - offset.top;
+
+
+    // Avoid Plugin.prototype conflicts
+    $.extend(Plugin.prototype, {
+        init: function () 
+        {
+            // Place initialization logic here
+            // You already have access to the DOM element and
+            // the options via the instance, e.g. this.element
+            // and this.settings
+            // you can add more functions like the one below and
+            // call them like so: this.yourOtherFunction(this.element, this.settings).
+
+            console.log("eyeball created!");
+            // console.log(this.settings);
             
-//             // Get distances from eye origins to mouse position
-//             x1 = x - this.origins.x1;
-//             y1 = y - this.origins.y1;
-//             x2 = x - this.origins.x2;
-//             y2 = y - this.origins.y2;
-            
-//             // Calculate hypotenuse
-//             var d1 = Math.sqrt(Math.pow(x1, 2) + Math.pow(y1, 2));
-//             var d2 = Math.sqrt(Math.pow(x2, 2) + Math.pow(y2, 2));
-            
-//             // Calculate scale factor of hypotenuse to radius
-//             var sf1 = this.radius / Math.max(d1, this.radius);
-//             var sf2 = this.radius / Math.max(d2, this.radius);
-            
-//             // Scale distances and get pupil coordinates relative to canvas
-//             return {
-//                 x1: this.origins.x1 + (x1 * sf1),
-//                 y1: this.origins.y1 + (y1 * sf1),
-//                 x2: this.origins.x2 + (x2 * sf2),
-//                 y2: this.origins.y2 + (y2 * sf2)
-//             };
-//         }
+            EYEBALL = $(this.element);
+
+            this.buildParallax();
+            this.setColors();
+            this.setSize();
+
+        },
+        buildParallax: function() {
+            // ADD THE NESTED DIVS WITH THE CLASS AND DATA FOR THE PARALLAX.JS
+            var BallIrisPupil =  $("<div class='layer ball'  data-depth='-.5'></div><div class='layer iris'  data-depth='-2'></div><div class='layer pupil' data-depth='-2.1'></div>");
+
+            EYEBALL.append(BallIrisPupil);
+
+            EYEBALL.parallax({
+               relativeInput:true,
+               clipRelativeInput:true,
+               limitY:40,
+               limitX:40,
+               frictionX:0.4, 
+               frictionY:0.4
+            });
+
+            if(Modernizr.touch){
+               EYEBALL.parallax('invert', false, false);
+            }  
+
+        },
+        // blink: function() 
+        // {
+        //     console.log('>blink<');
+        // },
+        setColors: function() 
+        {
+            // IF THERE ARE CUSTOM SETTING SENT VIA CONSTRUCTOR FUNCTION, 
+            // IT WILL OVERWRITE THE DATA-COLOR ATTRIBUTE:
+            if(this.settings.irisColor === defaults.irisColor){  
+              var color = EYEBALL.data('color');
+              if(color !== undefined) {          
+                this.settings.irisColor = color;
+              }
+            }
+
+            // SET THE COLOR OF THE IRIS.
+            EYEBALL.find('.iris').css({
+              'background-color': this.settings.irisColor
+            });
+
+        },
+        setSize: function() 
+        {
+            // IF THERE ARE CUSTOM SETTING SENT VIA CONSTRUCTOR FUNCTION, 
+            // IT WILL OVERWRITE THE DATA-COLOR ATTRIBUTE:
+            if(this.settings.size === defaults.size){  
+              var size = EYEBALL.data('size');
+              if(size !== undefined) {          
+                this.settings.size = size;
+              }
+            }
+
+            // SET THE SIZE OF THE EYEBALL
+            EYEBALL.css({
+              'width': this.settings.size + 'px',
+              'height': this.settings.size + 'px'
+            });
+        },
 
 
 
 
 
-    // var mX, mY, distance,
-    //     //$distance = $('#distance span'),
-    //     $element  = $('.eyeball1');
+    });
 
-    // function calculateDistance(elem, mouseX, mouseY) {
-    //     return Math.floor(Math.sqrt(Math.pow(mouseX - (elem.offset().left+(elem.width()/2)), 2) + Math.pow(mouseY - (elem.offset().top+(elem.height()/2)), 2)));
-    // }
 
-    // $(document).mousemove(function(e) {  
-    //     mX = e.pageX;
-    //     mY = e.pageY;
-    //     distance = calculateDistance($element, mX, mY);
-    //     //$distance.text(distance);         
-    // });
+
+
+
+
+// var blink = function() {
+//   console.log('>blink<');
+// };
+
+
+// function blink() {
+//   console.log('>blink<');
+// }
+
+
+
+
+
+
+
+
+    // A really lightweight plugin wrapper around the constructor,
+    // preventing against multiple instantiations
+    $.fn[ pluginName ] = function ( options ) {
+        this.each(function() {
+            if ( !$.data( this, "plugin_" + pluginName ) ) {
+                $.data( this, "plugin_" + pluginName, new Plugin( this, options ) );
+            }
+        });
+
+
+        // chain jQuery functions
+        return this;
+    };
+
+
+
+
+
+})( jQuery, window, document );
+
+
+
 
 
 

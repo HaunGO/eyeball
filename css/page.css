@@ -3,24 +3,24 @@ body {
   text-align: center;
 }
 
-/* line 14, ../scss/page.scss */
+/* line 15, ../scss/page.scss */
 header, footer {
   background-color: #333;
   color: #f5f0d8;
   text-align: center;
   padding: 50px;
 }
-/* line 22, ../scss/page.scss */
+/* line 23, ../scss/page.scss */
 header a:link, header a:visited, footer a:link, footer a:visited {
   color: #00bff3;
   text-decoration: none;
 }
-/* line 27, ../scss/page.scss */
+/* line 28, ../scss/page.scss */
 header a:hover, header a:active, footer a:hover, footer a:active {
   text-decoration: underline;
 }
 
-/* line 35, ../scss/page.scss */
+/* line 36, ../scss/page.scss */
 section {
   background-color: #999;
 }

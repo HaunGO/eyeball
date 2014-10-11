@@ -13,7 +13,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
-        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.css">
+        <!-- <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.css"> -->
+        <link rel="stylesheet" href="css/vendor/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/page.css">
 
@@ -37,7 +38,8 @@
         <h1>eyeball.js</h1>
         <p>A simple plugin based on <a href='http://matthew.wagerfield.com/parallax/' target='_blank'>parallax.js</a>, so it works on mobile too!</p>
       </header>
-<!--
+
+<!--  RENDERED HTML:
       <div class="eyeball">         
         <div class="layer ball"       data-depth="-.5"></div>
         <div class="layer iris"       data-depth="-2"></div>
@@ -47,11 +49,13 @@
 
       <section>
         <!-- <div class="eyeball" data-size="50"></div> -->
-        <div class="eyeball" data-size="100" data-color="#dbcf13"></div>
+        <div class="eyeball e1"></div>
+
         <div class="eyeball" data-size="250" data-color="#73a843"></div>
-        <!-- <div class="eyeball"></div> -->
-        <div class="eyeball" data-size="150" data-color="#18c6b8"></div>
-        <div class="eyeball" data-size="100" data-color="#a18bf4"></div>
+        <div class="eyeball" data-color="#dbcf13"></div>
+        <div class="eyeball" data-size="110" data-color="#18c6b8"></div>
+        <div class="eyeball" data-size="150" ></div>
+        <div class="eyeball" data-size="200" data-color="#a18bf4"></div>
 
 
 
@@ -67,13 +71,14 @@
 
 
       <footer>
-        <div class="eyeball" id="" data-size="130" data-color="#4b5956"></div>
+        <div class="eyeball" data-size="130" data-color="#4b5956"></div>
         <p>Thanks for playing!</p>
         <p>Contribute to the project on <a href='https://github.com/HaunGO/eyeball' target="_blank">GitHub</a>.</p>
       </footer>
 
 
-      <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+      <script src="js/vendor/jquery-2.1.1.min.js"></script>
       <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script> -->
 
 
@@ -86,21 +91,16 @@
 
 
             
+
+
       <script>
         $(function () {
-
-
-
-
             var i = 0;
             while ( i < 9 ) 
             {
                 $('.eyeballfield').append("<div class='eyeball' data-size='75'></div>");
                 i++;
             }
-
-
-
         });
       </script>
 
@@ -109,6 +109,49 @@
 
       <script src="eyeball/min/eyeball-min.js"></script>
 
+
+
+    <script>
+      $(function() {
+        
+        // IF SETTINGS ARE PASSED VIA CONSTRUCTOR, THEY WILL OVERWRITE THE DATA-INFO FROM THE TAG. 
+
+        // $(".eyeball").first().EyeBall({
+        //   // irisColor: "green",
+        //   // size: "50"
+        // });
+ 
+        // $(".eyeball").last().EyeBall({
+        //   // irisColor: "#ff0000",
+        //   // size: '400'
+        // });
+
+        $('.eyeball').EyeBall();
+
+        var eye = $('.e1');
+
+        // $('.e1').EyeBall({
+        eye.EyeBall({
+          irisColor: "#ff0000",
+          // size: '400'
+        });
+
+
+        // console.log(eye);
+
+
+        //eye.blink();
+        // eye.blink1();
+        // eye.blink2();
+
+
+      });
+
+
+
+
+
+    </script>
 
 
 
