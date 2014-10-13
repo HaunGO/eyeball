@@ -8,7 +8,7 @@ $light-blue: #00bff3;
 
 $iris-color: $light-blue;
 
-$pupil-color: #333;
+$pupil-color: #222;
 $ball-color: #f5f0d8;
 $outline-color: #c7594e;
 
@@ -21,6 +21,13 @@ $outline-color: #c7594e;
     margin: auto;
     top: 0; left: 0; bottom: 0; right: 0;
 }
+
+
+.EYEBALL{
+   @include center;
+}
+
+
 
 
 .eyeball {

@@ -1,22 +1,4 @@
-// the semi-colon before function invocation is a safety net against concatenated
-// scripts and/or other plugins which may not be closed properly.
 ;(function ( $, window, document, undefined ) {
-
-    // undefined is used here as the undefined global variable in ECMAScript 3 is
-    // mutable (ie. it can be changed by someone else). undefined isn't really being
-    // passed in so we can ensure the value of it is truly undefined. In ES5, undefined
-    // can no longer be modified.
-
-    // window and document are passed through as local variable rather than global
-    // as this (slightly) quickens the resolution process and can be more efficiently
-    // minified (especially when both are regularly referenced in your plugin).
-
-
-
-
-
-
-
 
 
 
@@ -45,8 +27,6 @@
         this._name = pluginName;
         this.init();
 
-        // console.log(element);
-    
     }
 
 
@@ -63,8 +43,6 @@
             // and this.settings
             // you can add more functions like the one below and
             // call them like so: this.yourOtherFunction(this.element, this.settings).
-
-            // console.log(this.settings);
             
             EYEBALL = $(this.element);
 
@@ -79,12 +57,9 @@
 
         buildEyeBall: function() {
             // ADD THE NESTED DIVS WITH THE CLASS AND DATA FOR THE PARALLAX.JS
-            // var BallIrisPupil =  $("<div class='layer ball'  data-depth='-.5'></div><div class='layer iris'  data-depth='-2'></div><div class='layer pupil' data-depth='-2.1'></div>");
             var BallIrisPupil =  $("<div class='eyeball'><div class='layer ball'  data-depth='-.5'></div><div class='layer iris'  data-depth='-2'></div><div class='layer pupil' data-depth='-2.1'></div></div>");
-            // var BallIrisPupil =  $("<div class='eyeball'><div class='ball'></div><div class='iris'></div><div class='pupil'></div></div>");
 
             EYEBALL.append(BallIrisPupil);
-
         },
 
         buildParallax: function() {
@@ -110,8 +85,8 @@
 
         setColors: function() 
         {
-            // IF THERE ARE CUSTOM SETTING SENT VIA CONSTRUCTOR FUNCTION, 
-            // IT WILL OVERWRITE THE DATA-COLOR ATTRIBUTE:
+            // IF THERE ARE CUSTOM SETTINGS SENT VIA CONSTRUCTOR FUNCTION, 
+            // IT WILL OVERWRITE THE DATA-ATTRIBUTES:
             if(this.settings.irisColor === defaults.irisColor){  
               var color = EYEBALL.data('eye-color');
               if(color !== undefined) {          
@@ -129,7 +104,7 @@
         setSize: function() 
         {
             // IF THERE ARE CUSTOM SETTING SENT VIA CONSTRUCTOR FUNCTION, 
-            // IT WILL OVERWRITE THE DATA-COLOR ATTRIBUTE:
+            // IT WILL OVERWRITE THE DATA-ATTRIBUTES:
             if(this.settings.size === defaults.size){  
               var size = EYEBALL.data('eye-size');
               if(size !== undefined) {          
@@ -137,7 +112,7 @@
               }
             }
 
-            // SET THE SIZE OF THE EYEBALL
+            // SET THE SIZE OF THE EYEBALL:
             EYEBALL.css({
               'width': this.settings.size + 'px',
               'height': this.settings.size + 'px'
@@ -148,7 +123,6 @@
               'height': this.settings.size + 'px'
             });
 
-            // console.log(EYEBALL)
         }
 
 
@@ -162,16 +136,11 @@
 
 /*
 *   THIS IS THE PLUGIN WRAPPER CODE THAT CAME IN THE jquery.boilerplate THAT I USED,
-*   BUT IT WAS SOMEHOW PREVENTING ME FROM CALLING METHODS/FUNCTIONS 
+*   BUT IT WAS SOMEHOW PREVENTING THE CALLING OF METHODS/FUNCTIONS 
 *   FROM OUTSIDE OF THE PLUGIN.   
 *
 *   THE ALTERNATE VERSION WAS PULLED FROM A FUNCTIONING EXAMPLE FROM THE NET..
-*   I DON'T UNDERSTAND IT.. .. .. PERHAPSE, ONE DAY I WILL. 
-*
-*   THE ALTERNATE VERSION, THAT I AM NOW USING, SOMEHOW CHANGES THE FUNCTIONALITY OF
-*   HOW THE PLUGIN CAN BE CALLED.. ..  CANNOT APPLY TO MULTIPLE, 
-*   eg: $('.eyeball') APPLIES THE SAME SETTING TO EACH. 
-* 
+*   I DO NOT UNDERSTAND THE PROBLEM.
 */
 
 // FIRST WRAPPER CODE:
@@ -230,6 +199,17 @@
 })(jQuery, window, document);
 
 
+// THIS IS FOR THE SUPER-ULTRA-SIMPLE IMPLEMENTATION:
+
+$(function() {
+  if( $('.EYEBALL').length ){
+    console.log('do it');
+    $('.EYEBALL').EyeBall();
+  }
+});
+
+// ADD THE FOLLOSING TO YOUR HMTL PAGE:
+// <div class="EYEBALL" data-eye-size="500" data-eye-color="#18c6b8"></div>
 
 
 
