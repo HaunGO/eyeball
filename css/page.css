@@ -1,28 +1,63 @@
-/* line 10, ../scss/page.scss */
+/* line 2, ../scss/page.scss */
 body {
   text-align: center;
+  position: relative;
 }
 
-/* line 15, ../scss/page.scss */
+/* line 8, ../scss/page.scss */
 header, footer {
   background-color: #333;
   color: #f5f0d8;
   text-align: center;
   padding: 50px;
 }
-/* line 23, ../scss/page.scss */
+/* line 16, ../scss/page.scss */
 header a:link, header a:visited, footer a:link, footer a:visited {
   color: #00bff3;
   text-decoration: none;
 }
-/* line 28, ../scss/page.scss */
+/* line 21, ../scss/page.scss */
 header a:hover, header a:active, footer a:hover, footer a:active {
   text-decoration: underline;
 }
 
-/* line 36, ../scss/page.scss */
+/* line 29, ../scss/page.scss */
 section {
   background-color: #999;
+}
+
+/* line 38, ../scss/page.scss */
+#eye1 {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+}
+
+/* line 42, ../scss/page.scss */
+#eye2 {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+/* line 46, ../scss/page.scss */
+#eye3 {
+  position: fixed;
+  top: 5px;
+  left: 5px;
+}
+
+/* line 50, ../scss/page.scss */
+#eye4 {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+}
+
+/* line 54, ../scss/page.scss */
+.eb1, .eb2 {
+  position: relative;
+  display: inline-block;
 }
 
 /*# sourceMappingURL=page.css.map */

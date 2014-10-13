@@ -26,11 +26,12 @@ $outline-color: #c7594e;
 .eyeball {
   width:100px; height:100px;
   margin: 3px;
+  position:relative;
   display:inline-block;
 
 // border:1px solid red;
 
- .pupil{
+  .pupil{
     background-color: $pupil-color;
     width: 30%;
     height: 30%;
@@ -71,6 +72,9 @@ $outline-color: #c7594e;
     // z-index: 100;
 
   }
+
+
+
 
 }
 

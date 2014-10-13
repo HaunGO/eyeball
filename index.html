@@ -37,24 +37,35 @@
       <header>
         <h1>eyeball.js</h1>
         <p>A simple plugin based on <a href='http://matthew.wagerfield.com/parallax/' target='_blank'>parallax.js</a>, so it works on mobile too!</p>
+        <div class="eb1" data-eye-size="200" data-eye-color="#b65151"></div>
       </header>
 
-<!--  RENDERED HTML:
+  <!-- RENDERED HTML: 
       <div class="eyeball">         
         <div class="layer ball"       data-depth="-.5"></div>
         <div class="layer iris"       data-depth="-2"></div>
         <div class="layer pupil"      data-depth="-2.1"></div>
       </div>
 -->      
+<!-- CLEAN DIVS W/O PARALLAX INFO.. (for testing)
+      <div class="eyeball">         
+        <div class="ball"  ></div>
+        <div class="iris"  ></div>
+        <div class="pupil" ></div>
+      </div>
+ -->      
 
       <section>
-        <!-- <div class="eyeball" data-size="50"></div> -->
-        <div class="eyeball" data-color="#dbcf13"></div>
-        <!-- <div class="eyeball e1"></div> -->
-        <div class="eyeball" data-size="250" data-color="#73a843"></div>
-        <!-- <div class="eyeball" data-size="200" ></div> -->
-        <div class="eyeball" data-size="200" data-color="#18c6b8"></div>
-        <div class="eyeball" data-size="150" data-color="#a18bf4"></div>
+        <div class="eb1" ></div>
+        <div class="eb1" data-eye-size="120"></div>
+        <div class="eb1" data-eye-color="#dbcf13"></div>
+        <div class="eb1" data-eye-size="150" data-eye-color="#73a843"></div>
+        <div class="eb1" data-eye-size="170" ></div>
+        <div class="eb1" data-eye-size="200" data-eye-color="#18c6b8"></div>
+        <div class="eb1" data-eye-size="130" data-eye-color="#a18bf4"></div>
+
+        <div class="eb2"></div>
+
 
 
 
@@ -65,18 +76,21 @@
 
 
 
+<div id="eye1" data-eye-size="150" data-eye-color="#18c6b8"></div>
+<div id="eye2" data-eye-size="250" data-eye-color="#73a843"></div>
+<div id="eye3" data-eye-size="80" data-eye-color="#73a843"></div>
+<div id="eye4" data-eye-size="80" data-eye-color="#73a843"></div>
 
 
 
 
       <footer>
-        <div class="eyeball" data-size="130" data-color="#4b5956"></div>
+        <div class="eb1" data-eye-size="130" data-eye-color="#4b5956"></div>
         <p>Thanks for playing!</p>
         <p>Contribute to the project on <a href='https://github.com/HaunGO/eyeball' target="_blank">GitHub</a>.</p>
       </footer>
 
 
-      <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
       <script src="js/vendor/jquery-2.1.1.min.js"></script>
       <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script> -->
 
@@ -88,69 +102,96 @@
       <script src="js/vendor/jquery.parallax.min.js"></script>
 
 
-
-            
-
-
-      <script>
-        $(function () {
-            var i = 0;
-            while ( i < 9 ) 
-            {
-                $('.eyeballfield').append("<div class='eyeball' data-size='75'></div>");
-                i++;
-            }
-        });
-      </script>
+<script src="eyeball/min/eyeball-min.js"></script>
 
 
 
 
-      <script src="eyeball/min/eyeball-min.js"></script>
+
+
+
+
+
+
 
 
 
     <script>
       $(function() {
         
-        // IF SETTINGS ARE PASSED VIA CONSTRUCTOR, THEY WILL OVERWRITE THE DATA-INFO FROM THE TAG. 
+        // IF SETTINGS ARE PASSED VIA CONSTRUCTOR, THEY 
+        // WILL OVERWRITE THE DATA-INFO FROM THE TAG. 
 
-        // $(".eyeball").first().EyeBall({
-        //   // irisColor: "green",
-        //   // size: "50"
-        // });
- 
-        // $(".eyeball").last().EyeBall({
-        //   // irisColor: "#ff0000",
-        //   // size: '400'
-        // });
+        var E1 = $('#eye1').EyeBall();
+        E1.blink();
 
-        $('.eyeball').EyeBall();
+        $('#eye1').click( function(){
+          E1.blink();
+        });
+        
+        var E2 = $('#eye2').EyeBall({
+          irisColor: "#73a843",
+          size: '150'
+        });
+      
+        $('#eye3').EyeBall();
 
-        // var eye = $('.e1');
-
-        // // $('.e1').EyeBall({
-        // eye.EyeBall({
-        //   irisColor: "#ff0000",
-        //   // size: '400'
-        // });
+        $('#eye4').EyeBall();
 
 
-        // console.log(eye);
 
 
-        //eye.blink();
-        // eye.blink1();
-        // eye.blink2();
+
+        // THIS APPLIES THE SAME SETTINGS FOR EACH :
+        // $('.eb1').EyeBall();
+        
+        // THIS WILL RETAIN THE DATA-ATTRIBUTE CUSTOMIZATIONS:
+        $('.eb1').each(function(){
+          $(this).EyeBall();
+        });
+
+
+
+
+        // FILL THE EYEBALL FIELD WITH EYBALLS, AND ACTIVATE THEM BY PASSING CUSTOM PARAMETERS
+        var i = 0;
+        while ( i < 9 ) {
+            $('.eyeballfield').append("<div class='eb2'></div>");
+            i++;
+        }
+
+        $('.eb2:even').EyeBall({
+          irisColor: "#dbcf13",
+          size: '110'
+        });
+
+        $('.eb2:odd').EyeBall({
+          irisColor: "#a18bf4",
+          size: '130'
+        });
+
+        $('.eb2').click( function(){
+          $(this).EyeBall().blink();
+        });
+
+
 
 
       });
-
-
-
-
-
     </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

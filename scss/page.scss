@@ -1,15 +1,8 @@
 
-
-
-
-
-
-
-
-
   body {
     text-align: center;
     // cursor: none;
+    position:relative;
   }
 
   header, footer {
@@ -41,6 +34,27 @@
   
 
 
+
+  #eye1{
+    position:absolute; bottom:5px; left:5px;
+  }
+
+  #eye2{
+    position:absolute; top:5px; right:5px;
+  } 
+
+  #eye3{
+    position:fixed; top:5px; left:5px;
+  } 
+
+  #eye4{
+    position:fixed; bottom:50px; right:50px;
+  } 
+
+  .eb1, .eb2 {
+    position:relative; 
+    display:inline-block; 
+  }
 
 
 
